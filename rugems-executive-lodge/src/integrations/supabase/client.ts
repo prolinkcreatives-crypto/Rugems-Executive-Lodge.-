@@ -32,7 +32,12 @@ function createSupabaseClient() {
   // Fall back to process.env for SSR (server-side rendering)
   const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL;
   const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
+console.log("VITE_SUPABASE_URL =", import.meta.env.VITE_SUPABASE_URL);
+console.log("process SUPABASE_URL =", process.env.SUPABASE_URL);
+console.log("Resolved SUPABASE_URL =", SUPABASE_URL);
 
+console.log("VITE_SUPABASE_PUBLISHABLE_KEY =", import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
+console.log("process SUPABASE_PUBLISHABLE_KEY =", process.env.SUPABASE_PUBLISHABLE_KEY);
   if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
     const missing = [
       ...(!SUPABASE_URL ? ['SUPABASE_URL'] : []),
